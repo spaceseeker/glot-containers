@@ -12,7 +12,13 @@ runTest() {
     resultFile=$3
     testName="$imageName - $(basename "$(dirname "$payloadFile")")"
 
-    result=$(docker run -i --rm "$imageName" < "$payloadFile")
+    if [ "$imageName" = "glot/solidity:latest" ]
+    then 
+        result=$(docker run -i --rm "$imageName" --standard-json < "$payloadFile")
+    else
+        result=$(docker run -i --rm "$imageName" < "$payloadFile")
+    fi 
+
     expect=$(cat "$resultFile")
 
     if [ "$result" == "$expect" ]; then

@@ -1,0 +1,1 @@
+FROM ethereum/solc:stable
