@@ -19,7 +19,7 @@ for dockerfile in **/Dockerfile; do
         (
             cd "$tagPath"
 	    docker rmi -f "$imageName"
-            docker build --no-cache -t "$imageName" .
+            docker build --no-cache --label "container=$image" -t "$imageName" .
         )
 	echo "$image is OK" >> output.txt
     fi
