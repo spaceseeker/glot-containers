@@ -21,7 +21,17 @@ runTest() {
 
     expect=$(cat "$resultFile")
 
-    if [ "$result" == "$expect" ]; then
+    if  [ "$imageName" = "glot/solidity:latest" ]; then
+        echo "testing solidity"
+        if [[ "$result" == *"$expect"* ]]; then
+            echo "OK: $testName"
+        else
+            echo "FAILED: $testName"
+            echo "Result: $result"
+            echo "Expect: $expect"
+        exit 1
+    fi
+    elif [ "$result" == "$expect" ]; then
         echo "OK: $testName"
     else
         echo "FAILED: $testName"

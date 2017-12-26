@@ -1,11 +1,8 @@
 {
-  "language": "Solidity",
-  "sources": 
-  {
-    "Contract.sol": {"content": "pragma solidity ^0.4.19;contract HelloWorld{address public greeter;uint public greet;}"}
-  },
-  "settings": 
-  {
-    "optimizer": {"enabled": true,"runs": 0}
-  }
+  "language": "solidity",
+  "files": [{
+    "name": "contract.sol",
+    "content": "pragma solidity ^0.4.19;contract HelloWorld{address public greeter;uint public greet;}"
+  }]
 }
+

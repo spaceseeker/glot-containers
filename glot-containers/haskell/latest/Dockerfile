@@ -50,7 +50,7 @@ RUN cabal update && \
         zlib
 
 # Install code-runner
-ADD https://github.com/prasmussen/glot-code-runner/releases/download/2017-04-12/runner /home/glot/runner
+ADD https://github.com/spaceseeker/slidenerd-glot-run/releases/download/0.1/slidenerd-glot-run /home/glot/runner
 RUN chmod +x /home/glot/runner
 
 USER glot
